@@ -19,8 +19,8 @@ router.get('/create', async (req, res, next) => {
 // POST: Post a new exam
 router.post('/create', async (req, res, next) =>{
     try{
-        let className = req.body.class.toString().split('-')[1];
-        let classId = req.body.class.toString().split('-')[0];
+        let className = req.body.class.toString().split('_')[1];
+        let classId = req.body.class.toString().split('_')[0];
         let exam= {
             date: req.body.date,
             endtime: req.body.endtime,
@@ -41,7 +41,7 @@ router.post('/create', async (req, res, next) =>{
         console.log(err);
     }
 
-    res.redirect('/exam');
+    res.redirect('/');
     
 });
 
@@ -50,5 +50,29 @@ router.get('/edit/:id', async (req, res, next) =>{
     let classes = await Class.find();
     res.render('exam/edit.hbs', {exam: exam, classes: classes});
 });
-  
+
+router.post('/edit/:id',async(req,res,next)=>{
+    let className = req.body.class.toString().split('_')[1];
+        let classId = req.body.class.toString().split('_')[0];
+        let exam= {
+            date: req.body.date,
+            endtime: req.body.endtime,
+            type: req.body.type,
+            room: req.body.room,
+            description: req.body.description,
+            class:{
+                name: className,
+                id: classId
+            }
+           
+        }
+        
+    await Exam.findByIdAndUpdate(req.params.id,exam)
+    res.redirect('/exams')
+})
+
+router.get('/delete/:id',async(req,res,next)=>{
+    await Exam.findByIdAndDelete(req.params.id)
+    res.redirect('/exams')
+})
   module.exports = router;

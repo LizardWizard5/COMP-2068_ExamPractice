@@ -1,3 +1,7 @@
+
+
+
+
 <section class="container">
     <form class="form" method="POST">
         <div class="mb-3">
@@ -15,6 +19,17 @@
         <div class="mb-3">
             <label for="time" class="form-label">Time</label>
             <input type="time" name="time" class="form-control" id="time" required>
+        </div>
+        <div class="mb-3">
+            <label for="day" class="form-label">Day</label>
+            <select name="day" class="selectpicker">
+                
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thusday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -20,7 +20,10 @@
       <td>{{this.room}}</td>
       <td>{{this.time}}</td>
         <td>{{this.day}}</td>
-      <td><a href="class/edit/{{this.id}}">Edit</td>
+      <td>
+      <a href="class/edit/{{this.id}}">Edit</a>
+      <a href="class/delete/{{this.id}}">Delete</a>
+      </td>
     </tr>
     {{/each}}
   </tbody>

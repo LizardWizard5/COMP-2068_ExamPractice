@@ -1,15 +1,11 @@
 <section class="container">
     <form method="POST">
         <div class="mb-3">
-            <select name="class" class="selectpicker" required> 
-                <option value="{{exam.class.id}}-{{exam.class.name}}">{{exam.class.name}}</option>
+            <select name="class" required> 
+                <option value="{{exam.class.id}}_{{exam.class.name}}">{{exam.class.name}}</option>
                 {{#each classes}}
-                    {{#if (eq this.id exam.class.id)}}
-                        {{! Skip the current iteration if the class is the same as the exam's class }}
-                        {{continue}}
-                    {{/if}}
-                    {{! Otherwise, display the class }}
-                    <option value="{{this.id}}-{{this.name}}">{{this.name}}</option>
+
+                    <option value="{{this.id}}_{{this.name}}">{{this.name}}</option>
                     
                 {{/each}}
             </select>

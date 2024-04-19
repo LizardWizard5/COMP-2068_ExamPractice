@@ -1,0 +1,31 @@
+    <form class="form" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Class name</label>
+            <input type="text" name="name" class="form-control" id="name" value="{{class.name}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="teacher" class="form-label">Teacher</label>
+            <input type="text" name="teacher" class="form-control" id="teacher" value="{{class.name}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="room" class="form-label">Room</label>
+            <input type="text" name="room" class="form-control" id="room" value="{{class.room}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" name="time" class="form-control" id="time" value="{{class.time}}"required>
+        </div>
+        <div class="mb-3">
+            <label for="day" class="form-label">Day</label>
+            <select name="day" >
+                <option value="{{class.day}}">{{class.day}}</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thusday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>  
