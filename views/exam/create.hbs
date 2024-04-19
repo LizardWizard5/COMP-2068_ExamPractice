@@ -1,0 +1,41 @@
+<section class="container">
+    <form method="POST">
+        <div class="mb-3">
+            <select name="class" class="selectpicker" required> 
+                {{#each classes}}
+                    <option value="{{this.id}}-{{this.name}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="type" class="form-label">Exam type</label>
+            <select name="type" class="form-select" required>
+                <option value="midterm">Midterm</option>
+                <option value="final">Final</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="datetime-local" name="date" class="form-control" id="date" required>
+        </div>
+        <div class="mb-3">
+            <label for="time" class="form-label">End  Time</label>
+            <input type="time" name="endtime" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="room" class="form-control" id="location" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" placeholder="Useful notes or comments?"></textarea>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
+

@@ -1,0 +1,52 @@
+<section class="container">
+    <form method="POST">
+        <div class="mb-3">
+            <select name="class" class="selectpicker" required> 
+                <option value="{{exam.class.id}}-{{exam.class.name}}">{{exam.class.name}}</option>
+                {{#each classes}}
+                    {{#if (eq this.id exam.class.id)}}
+                        {{! Skip the current iteration if the class is the same as the exam's class }}
+                        {{continue}}
+                    {{/if}}
+                    {{! Otherwise, display the class }}
+                    <option value="{{this.id}}-{{this.name}}">{{this.name}}</option>
+                    
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="examType" class="form-label">Exam type</label>
+            <select name="examType" class="form-select" required>
+                <option value="{{exam.type}}">{{exam.type}}</option>
+                {{#if (eq exam.type "midterm")}}
+                    <option value="final">Final</option>
+                {{else}}
+                    <option value="midterm">Midterm</option>
+                {{/if}}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="datetime-local" name="date" class="form-control" id="date" value="{{exam.date}}"  required>
+        </div>
+        <div class="mb-3">
+            <label for="time" class="form-label">End Time</label>
+            <input type="time" name="endtime" value="{{exam.endtime}}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="room" class="form-control" value="{{exam.room}}" id="location" required>
+            
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" placeholder="Useful notes or comments?" >{{exam.description}}</textarea>
+            
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>

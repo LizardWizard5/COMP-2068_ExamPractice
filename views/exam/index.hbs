@@ -1,0 +1,26 @@
+<section>
+    <table class="table">
+        <a href="/exams/create" class="btn btn-primary">Create Exam</a>
+  <thead>
+    <tr>
+      <th scope="col">Course Name</th>
+      <th scope="col">Type of Exam</th>
+      <th scope="col">Room</th>
+      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each exams}}
+    <tr>
+    
+      <th scope="row">{{this.class.name}}</th>
+      <td>{{this.type}}</td>
+      <td>{{this.room}}</td>
+      <td>{{this.date}}</td>
+      <td><a href="exams/edit/{{this.id}}">Edit</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</section>
