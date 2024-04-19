@@ -7,7 +7,7 @@ var ClassSchema = new mongoose.Schema({
     teacher: String,
     room: String,
     time: String,
-    
+    day:String
     //students: [{
     //    id: String,
     //    name: String

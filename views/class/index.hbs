@@ -1,12 +1,13 @@
 <section>
     <table class="table">
-        <a href="/class/create" class="btn btn-primary">Create Exam</a>
+        <a href="/class/create" class="btn btn-primary">Create Class</a>
   <thead>
     <tr>
       <th scope="col">Course Name</th>
       <th scope="col">Teacher</th>
       <th scope="col">Room</th>
       <th scope="col">Time</th>
+      <th scope="col">Day</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
       <td>{{this.teacher}}</td>
       <td>{{this.room}}</td>
       <td>{{this.time}}</td>
+        <td>{{this.day}}</td>
       <td><a href="class/edit/{{this.id}}">Edit</td>
     </tr>
     {{/each}}
